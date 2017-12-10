@@ -1,0 +1,1 @@
+[Linkki Pull Requestiin](https://github.com/ankatus/ohtu-miniprojekti/pull/20)
