@@ -37,5 +37,30 @@ public class Main {
         for (Player player : stats.matches(m4)) {
             System.out.println(player);
         }
+        
+        System.out.println("------");
+        QueryBuilder query = new QueryBuilder();
+        Matcher m5 = query.playsIn("NYR")
+                .hasAtLeast(10, "goals")
+                .hasFewerThan(25, "assists").build();
+
+        for (Player player : stats.matches(m5)) {
+            System.out.println(player);
+        }
+        
+        System.out.println("------");
+        
+        Matcher m6 = query.playsIn("PHI")
+                .hasAtLeast(10, "goals")
+                .hasFewerThan(20, "assists").build();
+
+        Matcher m7 = query.playsIn("EDM")
+                .hasAtLeast(60, "points").build();
+
+        Matcher m8 = query.oneOf(m6, m7).build();
+        
+        for (Player player : stats.matches(m8)) {
+            System.out.println(player);
+        }
     }
 }
